@@ -2,6 +2,7 @@ package io.redos.spring.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.stereotype.Component;
 
 /**
  * All rights Reserved, Powered By JIE
@@ -11,11 +12,12 @@ import org.springframework.beans.factory.annotation.Required;
  * @date 2018/5/28 17:27
  * @copyright ©2018
  */
+//@Component
 public class CDPlayer implements MediaPlayer {
 
     private CompactDisc compactDisc;
 
-    @Autowired
+//    @Autowired
     public CDPlayer(CompactDisc compactDisc){
         this.compactDisc = compactDisc;
     }
@@ -23,7 +25,7 @@ public class CDPlayer implements MediaPlayer {
     public void play() {
         compactDisc.play();
     }
-
+//
 //    @Autowired
 //    public void insertCompactPlay(CompactDisc cd){
 //        this.compactDisc = cd;
@@ -37,7 +39,7 @@ public class CDPlayer implements MediaPlayer {
 //    public void setCompactDisc1(CompactDisc compactDisc) {
 //        this.compactDisc = compactDisc;
 //    }
-//    @Injected
+//    @Inject
 //    public void setCompactDisc(CompactDisc compactDisc) {
 //        this.compactDisc = compactDisc;
 //    }

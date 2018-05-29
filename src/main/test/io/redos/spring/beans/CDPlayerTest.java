@@ -1,6 +1,9 @@
 package io.redos.spring.beans;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.contrib.java.lang.system.StandardOutputStreamLog;
+import org.junit.contrib.java.lang.system.SystemOutRule;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -42,9 +45,22 @@ public class CDPlayerTest {
         configApplicationContext.close();
     }
 
+    @Rule
+    public final SystemOutRule log = new SystemOutRule();
+
+
+    @Autowired
+    private MediaPlayer mediaPlayer;
     @Test
     public void play(){
+        log.enableLog();
+        mediaPlayer.play();
+        assertEquals("Playing Sgt. Pepper's Lonely Hearts Club Band. by the Beatles\r\n",log.getLog());
+    }
 
+    @Test
+    public void te(){
+        assertEquals("Playing Sgt. Pepper's Lonely Hearts Club Band. by the Beatles","Playing Sgt. Pepper's Lonely Hearts Club Band. by the Beatles");
     }
 
 }
