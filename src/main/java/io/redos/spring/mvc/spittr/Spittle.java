@@ -1,5 +1,8 @@
 package io.redos.spring.mvc.spittr;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 import java.util.Date;
 
 /**
@@ -52,19 +55,11 @@ public class Spittle {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Spittle spittle = (Spittle) o;
-
-        if (!id.equals(spittle.id)) return false;
-        return time != null ? time.equals(spittle.time) : spittle.time == null;
+        return EqualsBuilder.reflectionEquals(this,o,"id","time");
     }
 
     @Override
     public int hashCode() {
-        int result = id.hashCode();
-        result = 31 * result + (time != null ? time.hashCode() : 0);
-        return result;
+        return HashCodeBuilder.reflectionHashCode(this,"id","time");
     }
 }
