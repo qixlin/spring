@@ -1,6 +1,7 @@
 package io.redos.spring.mvc.spittr.data;
 
 import io.redos.spring.mvc.spittr.Spittle;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

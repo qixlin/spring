@@ -18,9 +18,9 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * @date 2018/5/31 12:23
  * @copyright ©2018
  */
-@Configuration
-@EnableWebMvc
-@ComponentScan("io.redos.spring.mvc.spittr.web")
+//@Configuration
+//@EnableWebMvc
+@ComponentScan(basePackages = {"io.redos.spring.mvc.spittr.web","io.redos.spring.mvc.spittr.data"})
 public class WebConfig implements WebMvcConfigurer {
 
     @Bean

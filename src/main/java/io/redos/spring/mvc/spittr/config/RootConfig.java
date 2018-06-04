@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
  * @date 2018/5/31 12:32
  * @copyright ©2018
  */
-@Configuration
+//@Configuration
 @ComponentScan(basePackages = "io.redos.spring.mvc.spittr",
     excludeFilters = {
         @ComponentScan.Filter(type = FilterType.ANNOTATION,value = EnableWebMvc.class)
